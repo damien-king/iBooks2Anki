@@ -18,7 +18,8 @@ be treated as a phrase.
 
 Right now only the basic card type is supported with fields `Front` and `Back`. The sentence of the
 highlighted word or phrase is added to the front with the key word or phrase in bold and the
-definition is added to the back
+definition is added to the back. Duplicate cards are not created so there is no risk running this
+over and over.
 
 Example:
 
