@@ -22,11 +22,7 @@ definition is added to the back
 
 Example:
 
-Front: Le visage de Tobias avait beau être pâle **depuis** le début du cataclysme, cette fois Matt
-le vit devenir crayeux.
-
-Back: 1. Indique le début, le point de départ dans le temps d'une action, d'un état qui dure
-jusqu'au moment où l'on parle : Depuis son accident, il boite. [sound:depuis]
+![Example](assets/example.png?raw=true 'Example')
 
 ## Requirements:
 
