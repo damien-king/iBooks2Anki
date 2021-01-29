@@ -104,6 +104,22 @@ pip3 install pyobjc-framework-CoreServices
    - `["wiktionary.json"]`
 8. FORVO_LANGUAGE=fr FORVO_COUNTRY=FRA
 
+Full example:
+
+`.env`
+
+```
+DECK_NAME=Française::Sentences
+FORVO_KEY=1234
+WATCHED_BOOKS=["681B3DF6A446CAD132484D43C162D18D"]
+PREFERRED_FORVO_USERNAMES=["gwen_bzh"]
+NOTE_AS_DEFINITION=false
+WORD_DICTIONARIES=["larousse.json", "someother.json"]
+PHRASE_DICTIONARIES=["wiktionary.json"]
+FORVO_LANGUAGE=fr
+FORVO_COUNTRY=FRA
+```
+
 ## Dictionaries
 
 Dictionary support is pretty basic, essentially it needs to have the following format to work:
