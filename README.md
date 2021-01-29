@@ -5,7 +5,8 @@ forvo API key to use the integration. You can get one from https://api.forvo.com
 (imo) price.
 
 This script automatically fetches definitions based on a few conditions as detailed below so please
-read the Dictionaries section first to see if it will suit your needs.
+read the Dictionaries section first to see if it will suit your needs. It has only been tested for
+French and on OSX Catalina.
 
 # Usage
 
