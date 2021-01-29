@@ -13,7 +13,8 @@ const DECK_NAME = process.env.DECK_NAME;
 const FORVO_COUNTRY = process.env.FORVO_COUNTRY || '';
 const FORVO_LANGUAGE = process.env.FORVO_LANGUAGE || '';
 const FORVO_KEY = process.env.FORVO_KEY || '';
-const NOTE_AS_DEFINITION = process.env.NOTE_AS_DEFINITION || false;
+const NOTE_AS_DEFINITION =
+  process.env.NOTE_AS_DEFINITION?.toLowerCase() === 'true';
 const WATCHED_BOOKS: string[] = JSON.parse(process.env.WATCHED_BOOKS ?? '[]');
 const PREFERRED_FORVO_USERNAMES: string[] = JSON.parse(
   process.env.PREFERRED_FORVO_USERNAMES ?? '[]'
