@@ -146,6 +146,8 @@ const getCards = async (): Promise<ICard[]> => {
       continue;
     }
 
+    console.log(annotation);
+
     const card = await makeCardFromAnnotation({ annotation });
     cards.push(card);
   }
@@ -254,7 +256,7 @@ const displayBooks = async () => {
   });
   console.log(`\n\nYour Watched books are:`);
   WATCHED_BOOKS.map((bookId: any) => {
-    console.log(`ID: ${bookId} Title: ${books[bookId].title}\n\n`);
+    console.log(`ID: ${bookId} Title: ${books[bookId].title}`);
   });
 };
 

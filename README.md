@@ -124,7 +124,9 @@ Dictionary support is pretty basic, essentially it needs to have the following f
 ]
 ```
 
-There are 2 types of dictionary, phrase and word.
+There are 2 types of dictionary, phrase and word. Single highlighted words will be searched within
+dictionaries in the WORD_DICTIONARIES env while phrases in the PHRASE_DICTIONARIES. If your
+dictionary contains both words and phrases, add the same filename to both lists in the env.
 
 The built in apple dictionary, is unfortunately limited in such that the API will only return
 results for the top priority book. You can configure which dictionary this is by
