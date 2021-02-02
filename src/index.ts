@@ -146,10 +146,14 @@ const getCards = async (): Promise<ICard[]> => {
       continue;
     }
 
-    console.log(annotation);
-
-    const card = await makeCardFromAnnotation({ annotation });
-    cards.push(card);
+    try {
+      const card = await makeCardFromAnnotation({ annotation });
+      cards.push(card);
+    } catch (err) {
+      console.log(
+        `Failed to make card from annotation: ${annotation.selectedText}`
+      );
+    }
   }
 
   return cards;
@@ -216,15 +220,20 @@ const createNote = async ({
   };
 
   if (FORVO_KEY) {
-    const forvoAudio = await getForvoAudio({ forvoApi, card });
-    if (forvoAudio) {
-      ankiNote.audio = [
-        {
-          url: forvoAudio.mp3Url,
-          filename: forvoAudio.filename,
-          fields: ['Back'],
-        },
-      ];
+    try {
+      const forvoAudio = await getForvoAudio({ forvoApi, card });
+      if (forvoAudio) {
+        ankiNote.audio = [
+          {
+            url: forvoAudio.mp3Url,
+            filename: forvoAudio.filename,
+            fields: ['Back'],
+          },
+        ];
+      }
+    } catch (err) {
+      console.log(`Failed to get Forvo for ${JSON.stringify(card)}`);
+      console.log(err);
     }
   }
   console.log(ankiNote);
@@ -245,6 +254,7 @@ const start = async () => {
       await createNote({ ankiApi, card, forvoApi });
     })
   );
+  console.log(`Finished making ${cards.length} cards`);
 };
 
 const displayBooks = async () => {
