@@ -24,7 +24,8 @@ export class ForvoApi implements IForvoApi {
   }
 
   public async queryWordPronounciations({ word }: { word: string }) {
-    const url = `https://apifree.forvo.com/key/${this.apiKey}/format/json/action/word-pronunciations/word/${word}/lanuage/${this.langaugeCode}/country/${this.countryCode}`;
+    let url = `https://apifree.forvo.com/key/${this.apiKey}/format/json/action/word-pronunciations/word/${word}/lanuage/${this.langaugeCode}/country/${this.countryCode}`;
+    url = encodeURI(url);
     const response = await axios.get(url);
 
     return response.data;
