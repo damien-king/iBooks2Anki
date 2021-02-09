@@ -249,11 +249,9 @@ const start = async () => {
     langaugeCode: FORVO_LANGUAGE,
   });
   const cards = await getCards();
-  await Promise.all(
-    cards.map(async card => {
-      await createNote({ ankiApi, card, forvoApi });
-    })
-  );
+  for (const card of cards) {
+    await createNote({ ankiApi, card, forvoApi });
+  }
   console.log(`Finished making ${cards.length} cards`);
 };
 
